@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-	va_start(arglist, format);
+	va_start(arg_list, format);
 
 	printed_chars = execute(format, f_list, arg_list);
 	va_end(arg_list);
