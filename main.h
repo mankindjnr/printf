@@ -32,6 +32,12 @@ int rot13(va_list);
 int print_reversed(va_list arg);
 char *rev_string(char *);
 int print_unsigned_number(unsigned int);
-int *_memcpy(char *dest, char *src, unsigned int in);
+int *_memcpy(char *dest, char *src, unsigned int n);
+int print_octal(va_list list);
+int print_hex(va_list list);
+int print_heX(va_list list);
+unsigned int base_len(unsigned int, int);
+void write_base(char *str);
+
 
 #endif

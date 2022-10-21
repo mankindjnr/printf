@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  *rev_string - reverse that string
@@ -72,10 +73,12 @@ int print_reversed(va_list arg)
 	char *ptr;
 
 	str = va_arg(arg, char *);
+
 	if (str == NULL)
 		return (-1);
 
 	ptr = rev_string(str);
+
 	if (ptr == NULL)
 		return (-1);
 
@@ -100,6 +103,7 @@ int rot13(va_list list)
 	char u[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	str = va_arg(list, char *);
+
 	if (str == NULL)
 		return (-1);
 
