@@ -1,10 +1,9 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * _printf - Receives the main string and all the necessary parameters to
- * print a formated string
- * @format: A string containing all the desired characters
- * Return: A total count of the characters printed
+ *_printf - receives the main string and necessary parameters
+ *@format: last fixed argument of the variadic function
+ *Return: count of the characters printed
  */
 int _printf(const char *format, ...)
 {
@@ -15,10 +14,11 @@ int _printf(const char *format, ...)
 		{"%", print_percent},
 		{"d", print_integer},
 		{"i", print_integer},
-		{"b", print_binary},
+		{"r", print_reversed},
+		{"u", unsigned_integer},
 		{"r", print_reversed},
 		{"R", rot13},
-		{"u", unsigned_integer},
+		{"b", print_binary},
 		{"o", print_octal},
 		{"x", print_hex},
 		{"X", print_heX},
@@ -30,8 +30,8 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(arg_list, format);
-	/*Calling parser function*/
-	printed_chars = parser(format, f_list, arg_list);
+
+	printed_chars = execute(format, f_list, arg_list);
 	va_end(arg_list);
 	return (printed_chars);
 }
